@@ -10,11 +10,13 @@
     @author McKilla Gorilla
 */
 
+/*
 import axios from 'axios'
 axios.defaults.withCredentials = true;
 const api = axios.create({
     baseURL: 'http://localhost:4000/auth',
 })
+*/
 
 // THESE ARE ALL THE REQUESTS WE`LL BE MAKING, ALL REQUESTS HAVE A
 // REQUEST METHOD (like get) AND PATH (like /register). SOME ALSO
@@ -23,23 +25,67 @@ const api = axios.create({
 // WE NEED TO PUT THINGS INTO THE DATABASE OR IF WE HAVE SOME
 // CUSTOM FILTERS FOR QUERIES
 
-export const getLoggedIn = () => api.get(`/loggedIn/`);
-export const loginUser = (email, password) => {
-    return api.post(`/login/`, {
-        email : email,
-        password : password
-    })
+const baseURL = "http://localhost:4000";
+
+const responseHandler = async (response) => {
+    let data = {};
+    try {
+        const text = await response.text();
+        if (text) {data = JSON.parse(text);}
+    } 
+    catch(err) {
+        console.warn("JSON error", err)
+        data = {};
+    }
+    return { status: response.status, ok: response.ok, data };
 }
-export const logoutUser = () => api.get(`/logout/`)
+
+export const getLoggedIn = () => {
+    return fetch(`${baseURL}/auth/loggedIn/`, {
+        method: 'GET',
+        credentials: 'include'
+    })
+    .then(responseHandler);
+}
+
+export const loginUser = (email, password) => {
+    const loginInfo = {email: email, password: password};
+    
+    return fetch(`${baseURL}/auth/login/`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(loginInfo)
+    })
+    .then(responseHandler);
+}
+
+export const logoutUser = () => {
+    return fetch(`${baseURL}/auth/logout/`, {
+        method: 'GET',
+        credentials: 'include'
+    })
+    .then(responseHandler);
+}
+
 export const registerUser = (firstName, lastName, email, password, passwordVerify) => {
-    return api.post(`/register/`, {
+    const loginInfo = {
         firstName : firstName,
         lastName : lastName,
         email : email,
         password : password,
         passwordVerify : passwordVerify
+    };
+
+    return fetch(`${baseURL}/auth/register/`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(loginInfo)
     })
+    .then(responseHandler);
 }
+
 const apis = {
     getLoggedIn,
     registerUser,
