@@ -1,5 +1,9 @@
 const dotenv = require('dotenv').config({ path: __dirname + '/../../../.env' });
 
+const hw3PlaylistsRaw = require("./115595059-playlists.json");
+const hw3Playlists = hw3PlaylistsRaw.playlists;
+//Supposed to load the HW3 playlist
+
 async function clearCollection(collection, collectionName) {
     try {
         await collection.deleteMany({});
@@ -28,6 +32,27 @@ async function resetMongo() {
     await clearCollection(User, "User");
     await fillCollection(Playlist, "Playlist", testData.playlists);
     await fillCollection(User, "User", testData.users);
+
+    /////////////New User Code/////////////
+    const newUser = new User({
+        email: "maxwellTo@gmail.com",
+        username: "maxwellTo",
+        passwordHash: "aaaaaaaa",
+        firstName: "Maxwell",
+        lastName: "To"
+    });
+    await newUser.save();
+
+    const userPlaylists = hw3Playlists.map(pl => ({
+        ...pl,
+        ownerEmail: newUser.email,
+        ownerName: newUser.username
+    }));
+
+    await fillCollection(Playlist, "Playlist", userPlaylists);
+
+    console.log("HW3 playlists added", newUser.username);
+    /////////////New User Code/////////////
 }
 
 const mongoose = require('mongoose')
@@ -37,5 +62,3 @@ mongoose
     .catch(e => {
         console.error('Connection error', e.message)
     })
-
-

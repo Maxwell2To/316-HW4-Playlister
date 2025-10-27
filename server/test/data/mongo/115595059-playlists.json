@@ -1,0 +1,337 @@
+{
+    "playlists": [
+        {
+            "key": "0",
+            "name": "Old Songs",
+            "likes": 2150,
+            "dislikes": 114,
+            "created": "Thu, 22 Oct 2021 01:10:53 GMT",
+            "modified": "Wed, 23 Jun 2022 03:21:31 GMT",
+            "accessed": "Thu, 26 Aug 2022 03:23:31 GMT",
+            "songs": [
+                {
+                    "title": "Schubert - Ave Maria",
+                    "artist": "Franz Schubert",
+                    "youTubeId": "2H5rusicEnc"
+                },
+                {
+                    "title": "Tchaikovsky - 1812 Overture (Full with Cannons)",
+                    "artist": "Pyotr Ilyich Tchaikovsky",
+                    "youTubeId": "VbxgYlcNxE8"
+                },
+                {
+                    "title": "September",
+                    "artist": "Earth, Wind, & Fire",
+                    "youTubeId": "Gs069dndIYk"
+                },
+                {
+                    "title": "Rock the Casbah",
+                    "artist": "The Clash",
+                    "youTubeId": "bJ9r8LMU9bQ"
+                },
+                {
+                    "title": "Don't Stop Me Now",
+                    "artist": "Queen",
+                    "youTubeId": "HgzGwKwLmgM"
+                },
+                {
+                    "title": "Just The Two Of Us",
+                    "artist": "Bill Withers",
+                    "youTubeId": "Uw5OLnN7UvM"
+                },
+                {
+                    "title": "Fly Me To The Moon",
+                    "artist": "Frank Sinatra",
+                    "youTubeId": "ZEcqHA7dbwM"
+                },
+                {
+                    "title": "Komm, süßer Tod",
+                    "artist": "Hideaki Anno",
+                    "youTubeId": "hoKluzn07eQ"
+                },
+                {
+                    "title": "Careless Whisper",
+                    "artist": "George Michael",
+                    "youTubeId": "izGwDsrQ1eQ"
+                },
+                {
+                    "title": "Welcome To The Black Parade",
+                    "artist": "My Chemical Romance",
+                    "youTubeId": "RRKJiM9Njr8"
+                },
+                {
+                    "title": "Deliver Us",
+                    "artist": "Ofra Haza",
+                    "youTubeId": "ie-FB6Opo5c"
+                },
+                {
+                    "title": "Thriller",
+                    "artist": "Michael Jackson",
+                    "youTubeId": "sOnqjkJTMaA"
+                },
+                {
+                    "title": "Down Under",
+                    "artist": "Men At Work",
+                    "youTubeId": "XfR9iY5y94s"
+                },
+                {
+                    "title": "Stay With Me",
+                    "artist": "Miki Matsubara",
+                    "youTubeId": "QNYT9wVwQ8A"
+                },
+                {
+                    "title": "Black Hole Sun",
+                    "artist": "Soundgarden",
+                    "youTubeId": "3mbBbFH9fAg"
+                },
+                {
+                    "title": "Carry on Wayward Son",
+                    "artist": "KANSAS",
+                    "youTubeId": "P5ZJui3aPoQ"
+                },
+                {
+                    "title": "Murder Of Don Fanucci",
+                    "artist": "Carmine Coppola",
+                    "youTubeId": "sjVC95mttqg"
+                },
+                {
+                    "title": "Ride of the Valkyries",
+                    "artist": "Richard Wagner",
+                    "youTubeId": "EUrvY1XggAI"
+                },
+                {
+                    "title": "I'm Still Standing",
+                    "artist": "Elton John",
+                    "youTubeId": "ZHwVBirqD2s"
+                },
+                {
+                    "title": "Africa",
+                    "artist": "Toto",
+                    "youTubeId": "FTQbiNvZqaY"
+                }
+            ]
+        },
+        {
+            "key": "1",
+            "name": "Favorite Songs",
+            "likes": 50,
+            "dislikes": 4,
+            "created": "Mon, 23 Aug 2022 03:12:53 GMT",
+            "modified": "Mon, 23 Aug 2022 03:14:31 GMT",
+            "accessed": "Mon, 23 Aug 2022 03:16:31 GMT",
+            "songs": [
+                {
+                    "title": "Evenflow",
+                    "artist": "Pearl Jam",
+                    "youTubeId": "q90DPCu_-zk"
+                },
+                {
+                    "title": "Mary On A Cross",
+                    "artist": "Ghost",
+                    "youTubeId": "k5mX3NkA7jM"
+                },
+                {
+                    "title": "Golden",
+                    "artist": "TWICE",
+                    "youTubeId": "yebNIHKAC4A"
+                },
+                {
+                    "title": "Holiday",
+                    "artist": "Green Day",
+                    "youTubeId": "Ajxn0PKbv7I"
+                },
+                {
+                    "title": "Boulevard of Broken Dreams",
+                    "artist": "Green Day",
+                    "youTubeId": "hBvJyi3fbtA"
+                },
+                {
+                    "title": "Basket Case",
+                    "artist": "Green Day",
+                    "youTubeId": "NUTGr5t3MoY"
+                },
+                {
+                    "title": "Illuminate",
+                    "artist": "Jonathan Young",
+                    "youTubeId": "el06xyckiwM"
+                },
+                {
+                    "title": "The Fall of Malevelon Creek",
+                    "artist": "Jonathan Young",
+                    "youTubeId": "fa8mupypaSA"
+                },
+                {
+                    "title": "Bells of Notre Dame (Disney's Hunchback) METAL cover",
+                    "artist": "Stephen Schwartz",
+                    "youTubeId": "t-VPrpo52hI"
+                },
+                {
+                    "title": "Gangsta's Paradise",
+                    "artist": "Coolio",
+                    "youTubeId": "7DXlY8LhWnI"
+                },
+                {
+                    "title": "Road to El Dorado Theme // Jonathan Young ROCK COVER VERSION",
+                    "artist": "Tim Rice",
+                    "youTubeId": "CbDAE4FLpw8"
+                },
+                {
+                    "title": "Speed of Light",
+                    "artist": "DJ Okawari",
+                    "youTubeId": "6C5sfOOvWwA"
+                },
+                {
+                    "title": "For Whom The Bell Tolls",
+                    "artist": "Metallica",
+                    "youTubeId": "B_HSa1dEL9s"
+                },
+                {
+                    "title": "Duvet",
+                    "artist": "Bôa",
+                    "youTubeId": "Uoox9fpmDP0"
+                },
+                {
+                    "title": "Thousand March",
+                    "artist": "Mr. Sauceman",
+                    "youTubeId": "SiCTsIsvcK8"
+                },
+                {
+                    "title": "21 Guns",
+                    "artist": "Green Day",
+                    "youTubeId": "r00ikilDxW4"
+                },
+                {
+                    "title": "Hallelujah",
+                    "artist": "Leonard Cohen",
+                    "youTubeId": "LRP8d7hhpoQ"
+                },
+                {
+                    "title": "Holy Diver",
+                    "artist": "Dio",
+                    "youTubeId": "2lvs2FzF64o"
+                },
+                {
+                    "title": "APT",
+                    "artist": "ROSÉ & Bruno Mars",
+                    "youTubeId": "ekr2nIex040"
+                },
+                {
+                    "title": "YOUR IDOL (K-Pop Demon Hunters) || Saja Boys Metal Cover",
+                    "artist": "EJAE",
+                    "youTubeId": "dRyW5QFknKI"
+                }
+            ]
+        },
+        {
+            "key": "2",
+            "name": "Interesting Songs",
+            "likes": 520,
+            "dislikes": 14,
+            "created": "Sun, 22 Aug 2022 03:19:53 GMT",
+            "modified": "Mon, 24 Aug 2022 03:21:31 GMT",
+            "accessed": "Wed, 26 Aug 2022 03:23:31 GMT",
+            "songs": [
+                {
+                    "title": "Little Dark Age cover in Classical Latin (SOFTBARDCORE)",
+                    "artist": "the_miracle_aligner",
+                    "youTubeId": "NfPFxj56mng"
+                },
+                {
+                    "title": "Red Sun - Eurobeat Remix",
+                    "artist": "Vikas Music",
+                    "youTubeId": "k11_yGqAKKk"
+                },
+                {
+                    "title": "Good Luck, Babe! - Chappell Roan (1960s Lesley Gore Style Cover) ft. Tatum Langley",
+                    "artist": "PostmodernJukebox",
+                    "youTubeId": "NiQwpKXKn-U"
+                },
+                {
+                    "title": "99 Luftballons (Jazz Vibes Nena Cover) ft. Aly Ryan",
+                    "artist": "PostmodernJukebox",
+                    "youTubeId": "TliE9rTrzXg"
+                },
+                {
+                    "title": "Cirice",
+                    "artist": "Ghost",
+                    "youTubeId": "KOrXKiSy8ZY"
+                },
+                {
+                    "title": "The Final Voyage of the Wailer's Essex",
+                    "artist": "Rusty Cage",
+                    "youTubeId": "iZOHut3z5XM"
+                },
+                {
+                    "title": "The Lies of Love",
+                    "artist": "Rusty Cage",
+                    "youTubeId": "--9R-YHOTqM"
+                },
+                {
+                    "title": "The Guillotine Song",
+                    "artist": "Rusty Cage",
+                    "youTubeId": "odF-g0KxSQ4&rco=1"
+                },
+                {
+                    "title": "Why Should I Worry - DISNEY (Oliver & Company)",
+                    "artist": "Jonathan Young",
+                    "youTubeId": "fcJDbJKMJRo"
+                },
+                {
+                    "title": "The Last Stand",
+                    "artist": "Frantisek Fuka",
+                    "youTubeId": "qht8FHOqr7I"
+                },
+                {
+                    "title": "Road to El Dorado Theme // Jonathan Young ROCK COVER VERSION",
+                    "artist": "Tim Rice",
+                    "youTubeId": "CbDAE4FLpw8"
+                },
+                {
+                    "title": "Just Don't Tell Mom Im in Bakhmut",
+                    "artist": "ArmataZ",
+                    "youTubeId": "79sXfQsFdyM"
+                },
+                {
+                    "title": "Thousand March",
+                    "artist": "Mr. Sauceman",
+                    "youTubeId": "SiCTsIsvcK8"
+                },
+                {
+                    "title": "A Cup of Liber-Tea",
+                    "artist": "Wilbert Roget II",
+                    "youTubeId": "WCUkF8a_4EE"
+                },
+                {
+                    "title": "Wu-Tang Clan Ain't Nuthing ta Fuck Wit! - SWING VERSION",
+                    "artist": "Rusty Cage",
+                    "youTubeId": "rpjG6_QxG6w"
+                },
+                {
+                    "title": "DOOM of the FATES (DUEL of the FATES in the style of DOOM Eternal)",
+                    "artist": "Psygnals",
+                    "youTubeId": "82Mo5Tx8XWM"
+                },
+                {
+                    "title": "Maestro",
+                    "artist": "Cjbeards",
+                    "youTubeId": "ZHvAzpDt_8k"
+                },
+                {
+                    "title": "Caravan",
+                    "artist": "John Wasson",
+                    "youTubeId": "38CRu1rCaKg"
+                },
+                {
+                    "title": "USURPER",
+                    "artist": "NXCRE",
+                    "youTubeId": "X28D2pAEDuk"
+                },
+                {
+                    "title": "YOASOBI",
+                    "artist": "Ayase",
+                    "youTubeId": "ZRtdQ81jPUQ"
+                }
+            ]
+        }
+    ]
+}
