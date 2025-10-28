@@ -43,11 +43,13 @@ async function resetMongo() {
     });
     await newUser.save();
 
-    const userPlaylists = hw3Playlists.map(pl => ({
-        ...pl,
-        ownerEmail: newUser.email,
-        ownerName: newUser.username
-    }));
+    const userPlaylists = [];
+    for (let i = 0; i < hw3Playlists.length; i++) {
+        const pl = hw3Playlists[i];
+        pl.ownerEmail = newUser.email;
+        pl.ownerName = newUser.username;
+        userPlaylists.push(pl);
+    }
 
     await fillCollection(Playlist, "Playlist", userPlaylists);
 
