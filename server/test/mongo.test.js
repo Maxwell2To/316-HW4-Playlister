@@ -1,6 +1,6 @@
 import { beforeAll, beforeEach, afterEach, afterAll, expect, test } from 'vitest';
 const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
-const mongoose = require('mongoose')
+//const mongoose = require('mongoose')
 
 /**
  * Vitest test script for the Playlister app's Mongo Database Manager. Testing should verify that the Mongo Database Manager 
@@ -100,3 +100,136 @@ test('Test #2) Creating a User in the Database', () => {
 });
 
 // THE REST OF YOUR TEST SHOULD BE PUT BELOW
+
+import { beforeAll, afterAll, expect, test, describe } from 'vitest'
+
+///////////////////// MONGO DATABASE TESTS /////////////////////
+
+const mongoose = require('mongoose')
+const MongoManager = require('../db/mongodb/index')
+
+describe('MongoManager CRUD Operations', () => {
+  let mongoDB
+  let testUser
+  let testPlaylist
+
+  beforeAll(async () => {
+    mongoDB = new MongoManager()
+    await mongoDB.connect()
+  })
+
+  afterAll(async () => {
+    await mongoose.connection.close()
+  })
+
+  test('Mongo: saveUser and getUserByEmail', async () => {
+    const userData = {
+      firstName: 'Maxwell',
+      lastName: 'To',
+      email: 'maxwellTo@gmail.com',
+      passwordHash: 'aaaaaaaa'
+    }
+
+    // Check if user already exists
+    const existing = await mongoDB.getUserByEmail(userData.email)
+    if (existing) {
+      await existing.deleteOne()
+    }
+
+    testUser = await mongoDB.saveUser(userData)
+
+    const fetched = await mongoDB.getUserByEmail(userData.email)
+
+    // Compare values
+    expect(fetched.email).toBe(userData.email)
+    expect(fetched.firstName).toBe(userData.firstName)
+
+    const keys = ['firstName', 'lastName', 'email', 'passwordHash']
+    for (let i = 0; i < keys.length; i++) {
+      expect(fetched[keys[i]]).toBe(userData[keys[i]])
+    }
+  })
+
+  test('Mongo: createPlaylist and getPlaylistById', async () => {
+    const playlistData = {
+      name: 'Maxwell Playlist',
+      ownerEmail: testUser.email,
+      songs: [{ title: 'Song 1', artist: 'Artist 1', youTubeId: 'YT001' }]
+    }
+
+    testPlaylist = await mongoDB.createPlaylist(playlistData)
+
+    const fetched = await mongoDB.getPlaylistById(testPlaylist._id)
+    expect(fetched.name).toBe(playlistData.name)
+
+    // Check for songs
+    for (let i = 0; i < fetched.songs.length; i++) {
+      expect(fetched.songs[i].title).toBe(playlistData.songs[i].title)
+      expect(fetched.songs[i].artist).toBe(playlistData.songs[i].artist)
+    }
+  })
+})
+
+///////////////////// POSTGRES DATABASE TESTS /////////////////////
+
+const { sequelize } = require('../models/playlist-model')
+const PostgresManager = require('../db/postgresql/index')
+
+describe('PostgresManager CRUD Operations', () => {
+  let pgDB
+  let testUser
+  let testPlaylist
+
+  beforeAll(async () => {
+    pgDB = new PostgresManager()
+    await pgDB.connect()
+  })
+
+  afterAll(async () => {
+    await sequelize.close()
+  })
+
+  test('Postgres: saveUser and getUserByEmail', async () => {
+    const userData = {
+      firstName: 'Maxwell',
+      lastName: 'To',
+      email: 'maxwellTo@gmail.com',
+      passwordHash: 'aaaaaaaa'
+    }
+
+    // Delete existing user if present
+    const existing = await pgDB.getUserByEmail(userData.email)
+    if (existing) {
+      await existing.destroy()
+    }
+
+    testUser = await pgDB.saveUser(userData)
+
+    const fetched = await pgDB.getUserByEmail(userData.email)
+    expect(fetched.email).toBe(userData.email)
+    expect(fetched.firstName).toBe(userData.firstName)
+
+    const keys = ['firstName', 'lastName', 'email', 'passwordHash']
+    for (let i = 0; i < keys.length; i++) {
+      expect(fetched[keys[i]]).toBe(userData[keys[i]])
+    }
+  })
+
+  test('Postgres: createPlaylist and getPlaylistById', async () => {
+    const playlistData = {
+      name: 'Maxwell Playlist',
+      ownerEmail: testUser.email,
+      songs: [{ title: 'Song 1', artist: 'Artist 1', youTubeId: 'YT001' }]
+    }
+
+    testPlaylist = await pgDB.createPlaylist(playlistData)
+
+    const fetched = await pgDB.getPlaylistById(testPlaylist.id)
+    expect(fetched.name).toBe(playlistData.name)
+
+    for (let i = 0; i < fetched.songs.length; i++) {
+      expect(fetched.songs[i].title).toBe(playlistData.songs[i].title)
+      expect(fetched.songs[i].artist).toBe(playlistData.songs[i].artist)
+    }
+  })
+})
